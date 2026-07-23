@@ -1,0 +1,545 @@
+/* =====================================================
+   MJL SOLUTIONS
+   AURORA OS DESIGN SYSTEM
+   BASE STYLES
+===================================================== */
+
+
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+/* =========================
+   HTML
+========================= */
+
+html{
+
+    scroll-behavior:smooth;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    background:
+
+    var(--bg-primary);
+
+    color:
+
+    var(--text-primary);
+
+    font-family:
+
+    var(--font-body);
+
+    font-size:
+
+    var(--fs-body);
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:
+
+    var(--font-heading);
+
+    font-weight:600;
+
+    line-height:1.1;
+
+    color:
+
+    var(--text-primary);
+
+}
+
+
+
+/* =========================
+   PARAGRAPHS
+========================= */
+
+p{
+
+    color:
+
+    var(--text-secondary);
+
+    max-width:70ch;
+
+}
+
+
+
+/* =========================
+   LINKS
+========================= */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+
+/* =========================
+   LISTS
+========================= */
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+
+
+/* =========================
+   IMAGES
+========================= */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+
+/* =========================
+   BUTTON RESET
+========================= */
+
+button,
+input,
+textarea{
+
+    font-family:inherit;
+
+    border:none;
+
+    outline:none;
+
+}
+
+
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection{
+
+    background:
+
+    var(--cyan);
+
+    color:
+
+    var(--bg-primary);
+
+}
+
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+    background:
+
+    var(--bg-primary);
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:
+
+    linear-gradient(
+        var(--cyan),
+        var(--blue)
+    );
+
+    border-radius:
+
+    var(--radius-pill);
+
+}
+
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:
+
+    var(--cyan);
+
+}
+
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    width:min(
+        100% - 40px,
+        var(--container)
+    );
+
+    margin-inline:auto;
+
+}
+
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+
+    position:relative;
+
+    padding:
+
+    var(--section-padding)
+    0;
+
+    overflow:hidden;
+
+}
+
+
+
+/* =========================
+   TEXT HELPERS
+========================= */
+
+.text-gradient{
+
+    background:
+
+    var(--gradient-text);
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.text-cyan{
+
+    color:
+
+    var(--cyan);
+
+}
+
+
+
+/* =========================
+   GLASS SYSTEM
+========================= */
+
+.glass{
+
+    background:
+
+    var(--glass);
+
+    border:
+
+    1px solid
+    var(--border-light);
+
+    backdrop-filter:
+
+    blur(var(--blur));
+
+    -webkit-backdrop-filter:
+
+    blur(var(--blur));
+
+}
+
+
+
+.glass:hover{
+
+    background:
+
+    var(--glass-hover);
+
+}
+
+
+
+/* =========================
+   GLOW EFFECTS
+========================= */
+
+.glow{
+
+    box-shadow:
+
+    var(--glow-cyan);
+
+}
+
+
+
+.glow-blue{
+
+    box-shadow:
+
+    var(--glow-blue);
+
+}
+
+
+
+/* =========================
+   HIDDEN STATES
+========================= */
+
+.hidden{
+
+    display:none;
+
+}
+
+
+
+/* =========================
+   CURSOR CONTROL
+========================= */
+
+.cursor-none{
+
+    cursor:none;
+
+}
+
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+:focus-visible{
+
+    outline:
+
+    2px solid var(--cyan);
+
+    outline-offset:
+
+    4px;
+
+}
+
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media(
+prefers-reduced-motion:reduce
+){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:
+        .01ms !important;
+
+        animation-iteration-count:
+        1 !important;
+
+        transition-duration:
+        .01ms !important;
+
+        scroll-behavior:
+        auto !important;
+
+    }
+
+}
+
+
+#three-container canvas{
+
+    display:block;
+
+}
+
+
+.hero-visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:20%;
+
+    background:
+
+    var(--gradient-glow);
+
+    filter:blur(80px);
+
+    z-index:-1;
+
+}
+html{
+
+scroll-behavior:
+
+smooth;
+
+}
+
+body::before{
+
+
+content:"";
+
+
+position:fixed;
+
+
+inset:0;
+
+
+z-index:-2;
+
+
+background:
+
+
+radial-gradient(
+
+circle at 20% 20%,
+
+rgba(0,229,255,.12),
+
+transparent 30%
+
+),
+
+
+radial-gradient(
+
+circle at 80% 80%,
+
+rgba(124,58,237,.15),
+
+transparent 30%
+
+);
+
+
+animation:
+
+backgroundMove 15s infinite alternate;
+
+
+}
+
+
+
+
+
+@keyframes backgroundMove{
+
+
+from{
+
+transform:
+
+translate(0,0);
+
+}
+
+
+to{
+
+
+transform:
+
+translate(-50px,50px);
+
+
+}
+
+
+}

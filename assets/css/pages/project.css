@@ -1,0 +1,257 @@
+/* =====================================================
+   PROJECT SECTION
+===================================================== */
+
+
+.projects-wrapper{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:50px;
+
+}
+
+
+
+.project-card{
+
+    display:grid;
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+    gap:50px;
+
+    align-items:center;
+
+    min-height:500px;
+
+}
+
+
+
+.project-number{
+
+    font-family:
+
+    var(--font-code);
+
+    color:
+
+    var(--cyan);
+
+}
+
+
+
+.project-info h3{
+
+
+    font-size:40px;
+
+    margin:
+
+    20px 0;
+
+
+}
+
+
+
+.project-info p{
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+/* Preview Area */
+
+
+.project-preview{
+
+
+    height:350px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+.mock-screen,
+.landing-preview,
+.portfolio-preview{
+
+
+    width:80%;
+
+    height:80%;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+
+    border:
+
+    1px solid var(--border-light);
+
+
+    border-radius:
+
+    var(--radius-lg);
+
+
+    box-shadow:
+
+    var(--shadow-lg);
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.mock-header{
+
+
+    padding:15px;
+
+    border-bottom:
+
+    1px solid var(--border-light);
+
+
+    color:
+
+    var(--cyan);
+
+
+}
+
+
+
+.mock-content{
+
+
+    padding:30px;
+
+
+}
+
+
+
+.mock-content div{
+
+
+    height:30px;
+
+
+    margin-bottom:15px;
+
+
+    background:
+
+    rgba(0,229,255,.15);
+
+
+    border-radius:10px;
+
+
+}
+
+
+
+
+
+.chess-board{
+
+
+    width:280px;
+
+    height:280px;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+}
+
+
+
+.chess-board div{
+
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+
+}
+
+
+
+
+
+.landing-preview{
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:30px;
+
+
+}
+
+
+
+.portfolio-preview{
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:70px;
+
+
+    font-family:
+
+    var(--font-heading);
+
+
+    color:
+
+    var(--cyan);
+
+
+}

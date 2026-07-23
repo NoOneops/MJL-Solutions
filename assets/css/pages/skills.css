@@ -1,0 +1,205 @@
+/* =====================================================
+   TECH STACK
+===================================================== */
+
+
+.tech-cloud{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+
+
+.tech-item{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+
+    padding:
+
+    18px 30px;
+
+
+    border-radius:
+
+    var(--radius-pill);
+
+
+    background:
+
+    var(--glass);
+
+
+    border:
+
+    1px solid var(--border-light);
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+    font-family:
+
+    var(--font-code);
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+.tech-item i{
+
+    color:
+
+    var(--cyan);
+
+    font-size:24px;
+
+}
+
+
+
+.tech-item:hover{
+
+
+    transform:
+
+    translateY(-10px);
+
+
+    border-color:
+
+    var(--cyan);
+
+
+    box-shadow:
+
+    var(--glow-cyan);
+
+
+}
+
+
+
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+
+.process-timeline{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(5,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+.process-step{
+
+
+    padding:
+
+    35px;
+
+
+    border-radius:
+
+    var(--radius-lg);
+
+
+    background:
+
+    var(--glass);
+
+
+    border:
+
+    1px solid var(--border-light);
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+.process-step span{
+
+
+    color:
+
+    var(--cyan);
+
+
+    font-family:
+
+    var(--font-code);
+
+
+}
+
+
+
+.process-step h3{
+
+
+    margin:
+
+    20px 0;
+
+
+    font-size:28px;
+
+
+}
+
+
+
+.process-step:hover{
+
+
+    transform:
+
+    translateY(-15px);
+
+
+    border-color:
+
+    var(--cyan);
+
+
+}

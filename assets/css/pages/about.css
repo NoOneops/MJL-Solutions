@@ -1,0 +1,198 @@
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+
+#about{
+
+    position:relative;
+
+}
+
+
+
+.about-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+
+    gap:50px;
+
+
+}
+
+
+
+.about-content h3{
+
+
+    font-size:32px;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+.about-content p{
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+/* Founder */
+
+
+.about-founder{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-top:40px;
+
+
+}
+
+
+
+.founder-avatar{
+
+
+    width:70px;
+
+    height:70px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    var(--gradient-main);
+
+
+    color:#001018;
+
+
+    font-size:24px;
+
+
+    font-weight:700;
+
+
+}
+
+
+
+.about-founder span{
+
+
+    display:block;
+
+    color:
+
+    var(--text-muted);
+
+
+}
+
+
+
+/* Timeline */
+
+
+.timeline{
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+
+}
+
+
+
+.timeline-item{
+
+
+    display:flex;
+
+    gap:25px;
+
+    padding-bottom:30px;
+
+
+    border-bottom:
+
+    1px solid var(--border-light);
+
+
+}
+
+
+
+.timeline-item:last-child{
+
+
+    border:none;
+
+
+}
+
+
+
+.timeline-item > span{
+
+
+    color:
+
+    var(--cyan);
+
+
+    font-family:
+
+    var(--font-code);
+
+
+    font-size:18px;
+
+
+}
+
+
+
+.timeline-item h4{
+
+
+    margin-bottom:10px;
+
+
+    font-size:22px;
+
+
+}
