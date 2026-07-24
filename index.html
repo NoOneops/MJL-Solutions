@@ -84,7 +84,12 @@ content="website"
 
 <meta 
 property="og:image"
-content="assets/images/preview.png"
+content="https://nooneops.github.io/mjl-solutions/images/preview.png"
+/>
+
+<meta
+property="og:url"
+content="https://nooneops.github.io/mjl-solutions/"
 />
 
 
@@ -104,7 +109,7 @@ content="summary_large_image"
 
 <link 
 rel="icon"
-href="assets/images/favicon.png"
+href="images/favicon.png"
 />
 
 
@@ -407,10 +412,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <br>
 
                 <span id="typing"></span>
-
-            <br>
-
-            <span id="typing"></span>
 
         </h1>
 
@@ -1409,9 +1410,9 @@ MySQL
 
 
 
-<a href="#" class="btn btn-outline">
+<a href="#contact" class="btn btn-outline">
 
-View Project
+Discuss This Project
 
 </a>
 
@@ -1529,9 +1530,9 @@ UI
 
 
 
-<a href="#" class="btn btn-outline">
+<a href="#contact" class="btn btn-outline">
 
-View Project
+Discuss This Project
 
 </a>
 
@@ -1644,9 +1645,9 @@ Animations
 
 
 
-<a href="#" class="btn btn-outline">
+<a href="#contact" class="btn btn-outline">
 
-View Project
+Discuss This Project
 
 </a>
 
@@ -1749,9 +1750,9 @@ UI/UX
 
 
 
-<a href="#" class="btn btn-outline">
+<a href="#contact" class="btn btn-outline">
 
-View Project
+Discuss This Project
 
 </a>
 
@@ -2160,13 +2161,6 @@ ready for users.
 </section>
 
 
-
-<section id="process">
-
-</section>
-
-
-
 <!-- =========================
         CONTACT SECTION
 ========================= -->
@@ -2316,7 +2310,7 @@ LinkedIn
 
 
 
-<label>
+<label for="contact-name">
 
 >
 
@@ -2327,13 +2321,17 @@ Your Name
 
 
 <input 
+id="contact-name"
+name="name"
 type="text"
 placeholder="John Doe"
+autocomplete="name"
+required
 >
 
 
 
-<label>
+<label for="contact-email">
 
 >
 
@@ -2344,14 +2342,18 @@ Email Address
 
 
 <input 
+id="contact-email"
+name="email"
 type="email"
 placeholder="example@email.com"
+autocomplete="email"
+required
 >
 
 
 
 
-<label>
+<label for="contact-message">
 
 >
 
@@ -2362,19 +2364,24 @@ Message
 
 
 <textarea
+id="contact-message"
+name="message"
 placeholder="Tell us about your idea..."
+required
 ></textarea>
 
 
 
 
-<button class="btn btn-primary">
+<button type="submit" class="btn btn-primary">
 
 Transmit Message
 
 <i class="fa-solid fa-paper-plane"></i>
 
 </button>
+
+<p id="contact-form-status" class="form-status" aria-live="polite"></p>
 
 
 
@@ -2527,7 +2534,7 @@ Start A Project
 <div class="footer-brand">
 
 
-<a href="#" class="logo">
+<a href="#hero" class="logo">
 
 
 <span class="logo-main">
@@ -2909,8 +2916,6 @@ https://cdnjs.cloudflare.com/ajax/libs/three.js/r161/three.min.js
 
 <!-- Application Scripts -->
 
-<script src="assets/js/utils.js"></script>
-
 <script src="assets/js/loader.js"></script>
 
 <script src="assets/js/navbar.js"></script>
@@ -2930,8 +2935,6 @@ https://cdnjs.cloudflare.com/ajax/libs/three.js/r161/three.min.js
 <script src="assets/js/terminal.js"></script>
 
 <script src="assets/js/performance.js"></script>
-
-<script src="assets/js/app.js"></script>
 
 
 </body>

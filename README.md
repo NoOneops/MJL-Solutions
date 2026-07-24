@@ -1,6 +1,6 @@
 # MJL Solutions
 
-![MJL Solutions](assets/images/preview.png)
+![MJL Solutions](images/preview.png)
 
 
 ## About
