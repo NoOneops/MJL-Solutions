@@ -3,554 +3,342 @@
    THREE.JS HOLOGRAPHIC CORE
 ===================================================== */
 
+const container = document.querySelector("#three-container");
 
-const container =
-document.querySelector("#three-container");
+if (container) {
 
+    // =====================================================
+    // SCENE
+    // =====================================================
 
+    const scene = new THREE.Scene();
 
-if(container){
+    // =====================================================
+    // CAMERA
+    // =====================================================
 
+    const camera = new THREE.PerspectiveCamera(
+        45,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+    );
 
+    camera.position.set(0, 0, 5);
 
-// ========================
-// SCENE
-// ========================
+    // =====================================================
+    // RENDERER
+    // =====================================================
 
+    const renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true
+    });
 
-const scene = new THREE.Scene();
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+    renderer.setSize(
+        container.clientWidth,
+        container.clientHeight
+    );
 
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
 
+    container.appendChild(renderer.domElement);
 
-// ========================
-// CAMERA
-// ========================
+    // =====================================================
+    // CORE
+    // =====================================================
 
+    const geometry = new THREE.IcosahedronGeometry(1.35, 5);
 
-const camera =
-new THREE.PerspectiveCamera(
+    const material = new THREE.MeshStandardMaterial({
 
-    45,
+        color: 0x00e5ff,
 
-    container.clientWidth /
-    container.clientHeight,
+        wireframe: true,
 
-    0.1,
+        transparent: true,
 
-    1000
+        opacity: 0.85
 
-);
+    });
 
+    const core = new THREE.Mesh(
+        geometry,
+        material
+    );
 
+    scene.add(core);
 
-camera.position.z = 5;
+    // =====================================================
+    // GLOW
+    // =====================================================
 
+    const glowGeometry = new THREE.SphereGeometry(
+        1.15,
+        64,
+        64
+    );
 
+    const glowMaterial = new THREE.MeshBasicMaterial({
 
+        color: 0x38bdf8,
 
-// ========================
-// RENDERER
-// ========================
+        transparent: true,
 
+        opacity: 0.08
 
-const renderer =
-new THREE.WebGLRenderer({
+    });
 
-    alpha:true,
+    const glow = new THREE.Mesh(
+        glowGeometry,
+        glowMaterial
+    );
 
-    antialias:true
+    scene.add(glow);
 
-});
+    // =====================================================
+    // RINGS
+    // =====================================================
 
+    function createRing(radius, rotationX) {
 
+        const geometry = new THREE.TorusGeometry(
+            radius,
+            0.008,
+            32,
+            200
+        );
 
-renderer.setPixelRatio(
+        const material = new THREE.MeshBasicMaterial({
 
-Math.min(
-window.devicePixelRatio,
-2
-)
+            color: 0x00e5ff,
 
-);
+            transparent: true,
 
+            opacity: 0.55
 
+        });
 
-renderer.setSize(
+        const ring = new THREE.Mesh(
+            geometry,
+            material
+        );
 
-    container.clientWidth,
+        ring.rotation.x = rotationX;
 
-    container.clientHeight
+        scene.add(ring);
 
-);
+        return ring;
 
+    }
 
+    const ring1 = createRing(1.8, 0.5);
+    const ring2 = createRing(2.1, 1.2);
+    const ring3 = createRing(2.5, 0.8);
 
-container.appendChild(
-renderer.domElement
-);
+    // =====================================================
+    // PARTICLES
+    // =====================================================
 
+    const particleGeometry = new THREE.BufferGeometry();
 
+    const particleCount =
+        window.innerWidth < 700 ? 120 : 280;
 
+    const positions = new Float32Array(
+        particleCount * 3
+    );
 
-// ========================
-// CORE SPHERE
-// ========================
+    for (let i = 0; i < positions.length; i++) {
 
+        positions[i] = (Math.random() - 0.5) * 8;
 
-const geometry =
-new THREE.IcosahedronGeometry(
+    }
 
-    1.35,
+    particleGeometry.setAttribute(
 
-    5
+        "position",
 
-);
+        new THREE.BufferAttribute(
+            positions,
+            3
+        )
 
+    );
 
+    const particleMaterial = new THREE.PointsMaterial({
 
-const material =
-new THREE.MeshStandardMaterial({
+        color: 0x00e5ff,
 
-    color:0x00e5ff,
+        size: 0.03,
 
-    wireframe:true,
+        transparent: true,
 
-    transparent:true,
+        opacity: 0.8,
 
-    opacity:.8
+        depthWrite: false,
 
-});
+        blending: THREE.AdditiveBlending
 
+    });
 
+    const particles = new THREE.Points(
 
-const core =
-new THREE.Mesh(
+        particleGeometry,
 
-    geometry,
+        particleMaterial
 
-    material
+    );
 
-);
+    scene.add(particles);
 
+    // =====================================================
+    // LIGHTING
+    // =====================================================
 
+    const pointLight = new THREE.PointLight(
+        0x00e5ff,
+        4,
+        20
+    );
 
-scene.add(core);
+    pointLight.position.set(3, 3, 3);
 
+    scene.add(pointLight);
 
+    scene.add(
+        new THREE.AmbientLight(
+            0xffffff,
+            0.55
+        )
+    );
 
+    // =====================================================
+    // GSAP INTRO
+    // =====================================================
 
+    if (typeof gsap !== "undefined") {
 
-// ========================
-// INNER GLOW
-// ========================
+        gsap.from(core.scale, {
 
+            x: 0,
+            y: 0,
+            z: 0,
 
-const glowGeometry =
-new THREE.SphereGeometry(
+            duration: 1.6,
 
-    1.1,
+            ease: "back.out(2)"
 
-    64,
+        });
 
-    64
+        gsap.from(camera.position, {
 
-);
+            z: 8,
 
+            duration: 2,
 
+            ease: "power3.out"
 
-const glowMaterial =
-new THREE.MeshBasicMaterial({
+        });
 
-    color:0x38bdf8,
+    }
 
-    transparent:true,
+    // =====================================================
+    // MOUSE
+    // =====================================================
 
-    opacity:.08
+    let mouseX = 0;
+    let mouseY = 0;
 
-});
+    let targetX = 0;
+    let targetY = 0;
 
+    window.addEventListener("mousemove", (e) => {
 
+        targetX =
+            (e.clientX / window.innerWidth - 0.5) * 0.8;
 
-const glow =
-new THREE.Mesh(
+        targetY =
+            (e.clientY / window.innerHeight - 0.5) * 0.8;
 
-    glowGeometry,
+    });
 
-    glowMaterial
+    // =====================================================
+    // ANIMATION
+    // =====================================================
 
-);
+    const clock = new THREE.Clock();
 
+    function animate() {
 
+        requestAnimationFrame(animate);
 
-scene.add(glow);
+        const elapsed = clock.getElapsedTime();
 
+        mouseX += (targetX - mouseX) * 0.05;
+        mouseY += (targetY - mouseY) * 0.05;
 
+        core.rotation.y += 0.003;
+        core.rotation.x += 0.001;
 
+        core.rotation.y += mouseX * 0.02;
+        core.rotation.x += mouseY * 0.02;
 
+        glow.scale.setScalar(
 
-// ========================
-// ORBIT RINGS
-// ========================
+            1 + Math.sin(elapsed * 2) * 0.05
 
+        );
 
-function createRing(size,rotation){
+        glow.position.y =
+            Math.sin(elapsed * 1.5) * 0.05;
 
+        ring1.rotation.z += 0.002;
+        ring2.rotation.z -= 0.001;
+        ring3.rotation.z += 0.0015;
 
-const ringGeometry =
-new THREE.TorusGeometry(
+        particles.rotation.y += 0.0008;
+        particles.rotation.x += 0.0003;
+        particles.rotation.z += 0.0005;
 
-    size,
+        camera.position.x +=
+            ((mouseX * 0.5) - camera.position.x) * 0.03;
 
-    .008,
+        camera.position.y +=
+            ((-mouseY * 0.5) - camera.position.y) * 0.03;
 
-    32,
+        camera.lookAt(scene.position);
 
-    200
+        renderer.render(scene, camera);
 
-);
+    }
 
+    animate();
 
+    // =====================================================
+    // RESPONSIVE
+    // =====================================================
 
-const ringMaterial =
-new THREE.MeshBasicMaterial({
+    window.addEventListener("resize", () => {
 
-    color:0x00e5ff,
+        camera.aspect =
+            container.clientWidth /
+            container.clientHeight;
 
-    transparent:true,
+        camera.updateProjectionMatrix();
 
-    opacity:.5
+        renderer.setSize(
 
-});
+            container.clientWidth,
 
+            container.clientHeight
 
+        );
 
-const ring =
-new THREE.Mesh(
-
-    ringGeometry,
-
-    ringMaterial
-
-);
-
-
-
-ring.rotation.x =
-rotation;
-
-
-
-scene.add(ring);
-
-
-
-return ring;
-
-
-}
-
-
-
-const ring1 =
-createRing(1.8,.5);
-
-
-const ring2 =
-createRing(2.1,1.2);
-
-
-const ring3 =
-createRing(2.5,.8);
-
-
-
-
-
-// ========================
-// PARTICLES
-// ========================
-
-
-const particleGeometry =
-new THREE.BufferGeometry();
-
-
-
-const particleCount = 
-window.innerWidth < 700 ? 100 : 250;
-
-
-
-const positions =
-new Float32Array(
-particleCount * 3
-);
-
-
-
-for(
-let i=0;
-i<particleCount*3;
-i++
-){
-
-positions[i] =
-( Math.random() - .5 ) * 8;
-
-}
-
-
-
-particleGeometry.setAttribute(
-
-"position",
-
-new THREE.BufferAttribute(
-
-positions,
-
-3
-
-)
-
-);
-
-
-
-const particleMaterial =
-new THREE.PointsMaterial({
-
-color:0x00e5ff,
-
-size:.025
-
-});
-
-
-
-const particles =
-new THREE.Points(
-
-particleGeometry,
-
-particleMaterial
-
-);
-
-
-
-scene.add(particles);
-
-
-
-
-
-// ========================
-// LIGHTING
-// ========================
-
-
-const light =
-new THREE.PointLight(
-
-0x00e5ff,
-
-4,
-
-20
-
-);
-
-
-
-light.position.set(
-
-3,
-
-3,
-
-3
-
-);
-
-
-
-scene.add(light);
-
-
-
-scene.add(
-
-new THREE.AmbientLight(
-
-0xffffff,
-
-.5
-
-)
-
-);
-
-
-
-
-
-// ========================
-// MOUSE MOVEMENT
-// ========================
-
-
-let mouseX = 0;
-
-let mouseY = 0;
-
-
-
-window.addEventListener(
-
-"mousemove",
-
-(e)=>{
-
-
-mouseX =
-(e.clientX /
-window.innerWidth)
--.5;
-
-
-
-mouseY =
-(e.clientY /
-window.innerHeight)
--.5;
-
-
-
-}
-
-);
-
-
-
-
-
-// ========================
-// ANIMATION LOOP
-// ========================
-
-
-function animate(){
-
-
-requestAnimationFrame(
-animate
-);
-
-
-
-core.rotation.y += .003;
-
-core.rotation.x += .001;
-
-
-
-glow.scale.x =
-1 +
-Math.sin(
-Date.now()*.002
-)*.05;
-
-
-glow.scale.y =
-glow.scale.x;
-
-
-
-
-ring1.rotation.z += .002;
-
-ring2.rotation.z -= .001;
-
-ring3.rotation.z += .001;
-
-
-
-
-particles.rotation.y += .0008;
-
-
-
-// mouse reaction
-
-core.rotation.y +=
-mouseX*.002;
-
-
-core.rotation.x +=
-mouseY*.002;
-
-
-
-
-renderer.render(
-
-scene,
-
-camera
-
-);
-
-
-
-}
-
-
-
-animate();
-
-
-
-
-
-// ========================
-// RESPONSIVE
-// ========================
-
-
-window.addEventListener(
-
-"resize",
-
-()=>{
-
-
-camera.aspect =
-
-container.clientWidth /
-container.clientHeight;
-
-
-
-camera.updateProjectionMatrix();
-
-
-
-renderer.setSize(
-
-container.clientWidth,
-
-container.clientHeight
-
-);
-
-
-
-}
-
-);
-
-
+    });
 
 }

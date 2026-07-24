@@ -1,46 +1,85 @@
 // ==========================================
-// Navbar Scroll Effect
+// MJL SOLUTIONS MAIN JAVASCRIPT
 // ==========================================
+
+
+// Navbar Scroll Effect
 
 const navbar = document.querySelector(".navbar");
 
-window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 50){
+if(navbar){
 
-        navbar.classList.add("scrolled");
+    window.addEventListener("scroll", () => {
 
-    }else{
 
-        navbar.classList.remove("scrolled");
+        if(window.scrollY > 50){
 
-    }
 
-});
-// ===============================
-// Typed Text
-// ===============================
+            navbar.classList.add("scrolled");
 
-new Typed("#typing",{
 
-    strings:[
+        }else{
 
-        "Virtual Assistant",
 
-        "Web Developer",
+            navbar.classList.remove("scrolled");
 
-        "Project Manager",
 
-        "Creative Designer",
+        }
 
-        "Problem Solver"
 
-    ],
+    });
 
-    typeSpeed:70,
 
-    backSpeed:45,
+}
 
-    loop:true
 
-});
+
+
+
+// ==========================================
+// Typed Hero Text
+// ==========================================
+
+
+const typingElement =
+document.querySelector("#typing");
+
+
+
+if(typingElement){
+
+
+    new Typed("#typing",{
+
+
+        strings:[
+
+
+            "Virtual Assistant",
+
+            "Web Developer",
+
+            "Project Manager",
+
+            "UI/UX Designer",
+
+            "Creative Problem Solver"
+
+
+        ],
+
+
+        typeSpeed:70,
+
+
+        backSpeed:45,
+
+
+        loop:true
+
+
+    });
+
+
+}
