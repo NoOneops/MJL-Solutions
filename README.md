@@ -52,7 +52,7 @@ mjohnbenedictx@gmail.com
 
 LinkedIn:
 
-linkedin.com/in/johnbenedictmartinez
+www.linkedin.com/in/johnbenedictmartinez
 
 
 ---

@@ -4,6 +4,12 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
+const heroReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (!heroReducedMotion) {
+
 // ==========================================
 // HERO INTRO
 // ==========================================
@@ -129,3 +135,5 @@ gsap.to(".scroll-indicator span", {
     ease: "power1.inOut"
 
 });
+
+}

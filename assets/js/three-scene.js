@@ -221,7 +221,10 @@ if (container) {
     // GSAP INTRO
     // =====================================================
 
-    if (typeof gsap !== "undefined") {
+    if (
+        typeof gsap !== "undefined" &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
 
         gsap.from(core.scale, {
 
