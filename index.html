@@ -469,7 +469,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <div>
 
                 <strong>
-                    4+
+                    10+
                 </strong>
 
                 <span>
@@ -483,7 +483,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <div>
 
                 <strong>
-                    8+
+                    10+
                 </strong>
 
                 <span>
@@ -1339,6 +1339,23 @@ experiences.
 
 
 
+<div class="project-filters" role="group" aria-label="Filter projects by category">
+
+    <button class="project-filter is-active" type="button" data-project-filter="web-development" aria-pressed="true">
+        Web Development
+    </button>
+
+    <button class="project-filter" type="button" data-project-filter="project-management" aria-pressed="false">
+        Project Management
+    </button>
+
+    <button class="project-filter" type="button" data-project-filter="creative-content" aria-pressed="false">
+        Creative Content
+    </button>
+
+</div>
+
+
 <div class="projects-wrapper">
 
 
@@ -1348,7 +1365,7 @@ experiences.
 <!-- PROJECT 01 -->
 
 
-<article class="project-card card">
+<article class="project-card card" data-project-category="project-management">
 
 
 
@@ -1469,7 +1486,7 @@ MJL SYSTEM
 <!-- PROJECT 02 -->
 
 
-<article class="project-card card">
+<article class="project-card card" data-project-category="creative-content">
 
 
 
@@ -1585,7 +1602,7 @@ Discuss This Project
 <!-- PROJECT 03 -->
 
 
-<article class="project-card card">
+<article class="project-card card" data-project-category="creative-content">
 
 
 
@@ -1690,7 +1707,7 @@ Future Website
 <!-- PROJECT 04 -->
 
 
-<article class="project-card card">
+<article class="project-card card" data-project-category="creative-content">
 
 
 
@@ -1785,7 +1802,7 @@ MJL
 
 
 <!-- PROJECT 05 -->
-<article class="project-card card">
+<article class="project-card card" data-project-category="web-development">
     <div class="project-info">
         <span class="project-number">05</span>
         <h3>Project Management Workspace</h3>
@@ -1806,7 +1823,7 @@ MJL
 </article>
 
 <!-- PROJECT 06 -->
-<article class="project-card card">
+<article class="project-card card" data-project-category="web-development">
     <div class="project-info">
         <span class="project-number">06</span>
         <h3>Project Delivery Dashboard</h3>
@@ -1824,7 +1841,7 @@ MJL
 </article>
 
 <!-- PROJECT 07 -->
-<article class="project-card card">
+<article class="project-card card" data-project-category="web-development">
     <div class="project-info">
         <span class="project-number">07</span>
         <h3>Operations Roadmap</h3>
@@ -1845,7 +1862,7 @@ MJL
 </article>
 
 <!-- PROJECT 08 -->
-<article class="project-card card">
+<article class="project-card card" data-project-category="web-development">
     <div class="project-info">
         <span class="project-number">08</span>
         <h3>Creative Content Campaign</h3>
@@ -1863,7 +1880,7 @@ MJL
 </article>
 
 <!-- PROJECT 09 -->
-<article class="project-card card">
+<article class="project-card card" data-project-category="project-management">
     <div class="project-info">
         <span class="project-number">09</span>
         <h3>Social Content System</h3>
@@ -1881,7 +1898,7 @@ MJL
 </article>
 
 <!-- PROJECT 10 -->
-<article class="project-card card">
+<article class="project-card card" data-project-category="project-management">
     <div class="project-info">
         <span class="project-number">10</span>
         <h3>Brand Content Toolkit</h3>
@@ -3091,6 +3108,8 @@ https://cdnjs.cloudflare.com/ajax/libs/three.js/r161/three.min.js
 <script src="assets/js/terminal.js"></script>
 
 <script src="assets/js/performance.js"></script>
+
+<script src="assets/js/project-filters.js"></script>
 
 
 </body>
