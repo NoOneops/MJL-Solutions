@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">MJL Solutions</title>
+  <desc id="description">Independent digital studio by John Benedict Martinez</desc>
+  <rect width="1200" height="630" fill="#060a12"/>
+  <path d="M0 480 420 60h780v570H0Z" fill="#0b111d"/>
+  <path d="M80 80h1040M80 550h1040" stroke="#1d2a3b" stroke-width="2"/>
+  <circle cx="1060" cy="124" r="54" fill="#22d3ee" opacity=".12"/>
+  <rect x="86" y="180" width="440" height="270" rx="42" fill="#101927" stroke="#245566" stroke-width="3"/>
+  <path d="M146 390V240h42l78 84 78-84h42v150h-48v-82l-72 78-72-78v82Z" fill="#22d3ee"/>
+  <path d="M600 244h420v28H600zm0 67h332v22H600zm0 58h264v22H600Z" fill="#f1f5f9"/>
+  <path d="M600 422h190v14H600Z" fill="#22d3ee"/>
+</svg>

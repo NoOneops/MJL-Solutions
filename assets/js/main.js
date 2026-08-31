@@ -1,85 +1,17 @@
-// ==========================================
-// MJL SOLUTIONS MAIN JAVASCRIPT
-// ==========================================
+import { initCommandPalette } from "./command.js";
+import { initHeroAnimations } from "./hero.js";
+import { initNavigation } from "./navbar.js";
+import { initPerformanceEnhancements } from "./performance.js";
+import { initProjectFilters } from "./project-filters.js";
+import { initContactForm } from "./terminal.js";
 
+const reducedMotionQuery = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+);
 
-// Navbar Scroll Effect
-
-const navbar = document.querySelector(".navbar");
-
-
-if(navbar){
-
-    window.addEventListener("scroll", () => {
-
-
-        if(window.scrollY > 50){
-
-
-            navbar.classList.add("scrolled");
-
-
-        }else{
-
-
-            navbar.classList.remove("scrolled");
-
-
-        }
-
-
-    });
-
-
-}
-
-
-
-
-
-// ==========================================
-// Typed Hero Text
-// ==========================================
-
-
-const typingElement =
-document.querySelector("#typing");
-
-
-
-if(typingElement){
-
-
-    new Typed("#typing",{
-
-
-        strings:[
-
-
-            "Virtual Assistant",
-
-            "Web Developer",
-
-            "Project Manager",
-
-            "UI/UX Designer",
-
-            "Creative Problem Solver"
-
-
-        ],
-
-
-        typeSpeed:70,
-
-
-        backSpeed:45,
-
-
-        loop:true
-
-
-    });
-
-
-}
+initNavigation(reducedMotionQuery);
+initCommandPalette(reducedMotionQuery);
+initProjectFilters();
+initContactForm();
+initPerformanceEnhancements();
+initHeroAnimations(reducedMotionQuery);

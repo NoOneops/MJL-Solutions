@@ -1,60 +1,76 @@
-# MJL Solutions
+# MJL Solutions portfolio
 
-![MJL Solutions](images/preview.png)
+The public portfolio for MJL Solutions, an independent digital studio by John Benedict Martinez. It presents the studio's positioning, focused services, selected case-study placeholders, working process, and an email-based inquiry path without sending form data to an external provider.
 
+The site is published as a GitHub Pages project site at [https://nooneops.github.io/MJL-Solutions/](https://nooneops.github.io/MJL-Solutions/).
 
-## About
+## Technology
 
-MJL Solutions is a digital solutions brand created by John Benedict Martinez.
+- Semantic HTML and mobile-first CSS
+- JavaScript ES modules
+- GSAP for a small progressive-enhancement entrance animation
+- Vite for local development and production builds
+- Playwright for browser behavior and responsive checks
+- ESLint, Prettier, and html-validate for automated quality checks
+- Sharp for reproducible favicon and social-preview generation
 
-We help businesses and individuals through:
+No UI framework, icon font, analytics package, external form provider, or runtime Three.js dependency is used.
 
-- Web Development
-- Virtual Assistance
-- Project Management
-- UI/UX Design
-- Creative Content
-- Social Media Management
+## Local development
 
+Use Node.js 22 or newer.
 
-## Technologies
+```powershell
+npm ci
+npm run dev
+```
 
-- HTML
-- CSS
-- JavaScript
-- Three.js
-- GSAP
+Vite prints the local development URL. The configured production base is `/MJL-Solutions/`.
 
+## Build and preview
 
-## Projects
+```powershell
+npm run build
+npm run preview
+```
 
-### Motorpool Management System
+The build command regenerates the favicon and social-preview assets, then writes the production site to `dist/`. The preview is available at `http://127.0.0.1:4173/MJL-Solutions/`.
 
-A management platform for organizing vehicle operations and records.
+## Testing
 
+Install Chromium once on a new machine:
 
-### Chess Application
+```powershell
+npx playwright install chromium
+```
 
-Interactive chess experience built with modern web technologies.
+Run the complete production-readiness suite:
 
+```powershell
+npm run check
+```
 
-### Landing Pages
+The suite checks formatting, JavaScript linting, HTML validity, the production build, built-output links and Pages paths, mobile navigation, project filters, command-palette keyboard behavior, contact validation, reduced motion, JavaScript-free readability, console output, and horizontal overflow at supported viewports.
 
-Modern responsive landing pages focused on design and user experience.
+Individual commands are also available:
 
+```powershell
+npm run format:check
+npm run lint
+npm run validate:html
+npm run test:contrast
+npm run test:links
+npm run test:browser
+```
 
-## Contact
+## Deployment
 
-Email:
+`.github/workflows/deploy-pages.yml` builds, tests, uploads, and deploys `dist/` through GitHub Pages when changes reach `main`, or when manually dispatched. Configure the repository's Pages source as **GitHub Actions** before the first deployment.
 
-mjohnbenedictx@gmail.com
+The workflow does not require project secrets. Local work should be reviewed on a feature branch before it is committed or merged.
 
+## Content and assets
 
-LinkedIn:
+Unverified client details, project outcomes, screenshots, links, and offer details intentionally remain clearly marked as placeholders. Replace them only with confirmed facts and optimized real screenshots. If below-the-fold `<img>` elements are added, include intrinsic `width` and `height`, `loading="lazy"`, descriptive alternative text, and a WebP or AVIF source when appropriate.
 
-www.linkedin.com/in/johnbenedictmartinez
-
-
----
-
-Built by MJL Solutions
+Editable brand-image sources live in `assets/brand/`. Run `npm run assets` after changing them; generated deployment assets are written to `public/`.

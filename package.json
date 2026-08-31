@@ -1,0 +1,37 @@
+{
+  "name": "mjl-solutions-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "assets": "node scripts/generate-assets.mjs",
+    "prebuild": "npm run assets",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint assets/js scripts tests vite.config.js playwright.config.js eslint.config.js",
+    "validate:html": "html-validate index.html public/404.html",
+    "test:contrast": "node scripts/check-contrast.mjs",
+    "test:links": "node scripts/check-links.mjs",
+    "test:browser": "playwright test",
+    "check": "npm run format:check && npm run lint && npm run validate:html && npm run test:contrast && npm run build && npm run test:links && npm run test:browser"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.1",
+    "eslint": "^10.9.1",
+    "globals": "^17.11.0",
+    "html-validate": "^10.9.0",
+    "prettier": "^3.9.6",
+    "sharp": "^0.35.4",
+    "vite": "^8.2.2"
+  }
+}
