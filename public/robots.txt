@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nooneops.github.io/MJL-Solutions/sitemap.xml

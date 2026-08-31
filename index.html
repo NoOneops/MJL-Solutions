@@ -1,3117 +1,875 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-
-
-<meta charset="UTF-8">
-
-
-<meta 
-name="viewport" 
-content="width=device-width, initial-scale=1.0"
->
-
-
-<title>
-MJL Solutions | Turning Ideas Into Reality
-</title>
-
-
-
-<meta 
-name="description"
-content="
-MJL Solutions creates modern digital experiences through web development,
-UI/UX design, virtual assistance, project management, and creative solutions.
-"
-/>
-
-
-
-<meta 
-name="keywords"
-content="
-MJL Solutions,
-web development,
-Django developer,
-virtual assistant,
-UI UX design,
-freelancer,
-website development
-"
-/>
-
-
-
-<meta 
-name="author"
-content="
-John Benedict Martinez
-"
-/>
-
-
-
-
-<!-- Open Graph -->
-
-<meta 
-property="og:title"
-content="
-MJL Solutions | Digital Solutions
-"
-/>
-
-
-
-<meta 
-property="og:description"
-content="
-Turning ideas into reality through technology,
-design, and innovation.
-"
-/>
-
-
-
-<meta 
-property="og:type"
-content="website"
-/>
-
-
-
-<meta 
-property="og:image"
-content="https://nooneops.github.io/mjl-solutions/images/preview.png"
-/>
-
-<meta
-property="og:url"
-content="https://nooneops.github.io/mjl-solutions/"
-/>
-
-
-
-
-<!-- Twitter Preview -->
-
-<meta 
-name="twitter:card"
-content="summary_large_image"
->
-
-
-
-
-<!-- Favicon -->
-
-<link 
-rel="icon"
-href="images/favicon.png"
-/>
-
-
-
-
-
-<!-- Fonts -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-
-
-
-
-<!-- Icons -->
-
-<link 
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-/>
-
-
-
-
-
-<!-- CSS -->
-
-<link rel="stylesheet" href="assets/css/variables.css">
-
-<link rel="stylesheet" href="assets/css/base.css">
-
-<link rel="stylesheet" href="assets/css/components.css">
-
-<link rel="stylesheet" href="assets/css/responsive.css">
-
-
-<link rel="stylesheet" href="assets/css/pages/home.css">
-
-<link rel="stylesheet" href="assets/css/pages/about.css">
-
-<link rel="stylesheet" href="assets/css/pages/services.css">
-
-<link rel="stylesheet" href="assets/css/pages/projects.css">
-
-<link rel="stylesheet" href="assets/css/pages/skills.css">
-
-<link rel="stylesheet" href="assets/css/pages/contact.css">
-
-<link rel="stylesheet" href="assets/css/pages/cta.css">
-
-<link rel="stylesheet" href="assets/css/pages/footer.css">
-
-
-<link rel="stylesheet" href="assets/css/components/command.css">
-
-<link rel="stylesheet" href="assets/css/components/cursor.css">
-
-
-
-</head>
-
-
-<body>
-
-
-<!-- =========================
-     FUTURISTIC LOADER
-========================= -->
-
-<div id="loader">
-
-    <div class="loader-inner">
-
-
-        <div class="loader-logo">
-
-            <span>MJL</span>
-
-        </div>
-
-
-        <div class="loader-line">
-
-            <div class="loader-progress"></div>
-
-        </div>
-
-
-        <div class="loader-status">
-
-            <span id="loader-text">
-                INITIALIZING SYSTEM...
-            </span>
-
-
-            <span id="loader-percent">
-                0%
-            </span>
-
-        </div>
-
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MJL Solutions | Independent Digital Studio</title>
+    <meta
+      name="description"
+      content="MJL Solutions is an independent digital studio by John Benedict Martinez, focused on websites, interface design, and practical digital delivery."
+    />
+    <meta name="author" content="John Benedict Martinez" />
+    <meta name="theme-color" content="#060a12" />
+    <link rel="canonical" href="https://nooneops.github.io/MJL-Solutions/" />
+
+    <meta
+      property="og:title"
+      content="MJL Solutions | Independent Digital Studio"
+    />
+    <meta
+      property="og:description"
+      content="Websites, interface design, and practical digital delivery by John Benedict Martinez."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MJL Solutions" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:url"
+      content="https://nooneops.github.io/MJL-Solutions/"
+    />
+    <meta
+      property="og:image"
+      content="https://nooneops.github.io/MJL-Solutions/og-image.webp"
+    />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="MJL Solutions — independent digital studio by John Benedict Martinez"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="MJL Solutions | Independent Digital Studio"
+    />
+    <meta
+      name="twitter:description"
+      content="Websites, interface design, and practical digital delivery by John Benedict Martinez."
+    />
+    <meta
+      name="twitter:image"
+      content="https://nooneops.github.io/MJL-Solutions/og-image.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="MJL Solutions — independent digital studio by John Benedict Martinez"
+    />
+
+    <link rel="icon" href="/MJL-Solutions/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="/MJL-Solutions/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/MJL-Solutions/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/MJL-Solutions/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link rel="manifest" href="/MJL-Solutions/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/app.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "John Benedict Martinez",
+        "url": "https://nooneops.github.io/MJL-Solutions/",
+        "email": "mailto:mjohnbenedictx@gmail.com",
+        "sameAs": [
+          "https://github.com/NoOneops",
+          "https://linkedin.com/in/johnbenedictmartinez"
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div id="background" aria-hidden="true">
+      <div class="grid"></div>
+      <div class="aurora"></div>
     </div>
 
-</div>
-
-
-
-<!-- =========================
-     CUSTOM CURSOR
-========================= -->
-
-
-<div id="cursor">
-
-</div>
-
-
-<div id="cursor-dot">
-
-</div>
-
-
-
-<!-- Background -->
-
-<div id="background">
-
-    <div class="grid"></div>
-
-    <div class="aurora"></div>
-
-</div>
-
-
-
-<!-- Navigation -->
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<header id="navbar">
-
-
-<nav class="nav-container">
-
-
-    <!-- Logo -->
-
-    <a href="index.html" class="logo">
-
-
-        <span class="logo-main">
-            MJL
-        </span>
-
-
-        <span class="logo-sub">
-            SOLUTIONS
-        </span>
-
-
-    </a>
-
-
-
-
-    <!-- Links -->
-
-    <ul class="nav-links">
-
-
-        <li>
-            <a href="#hero" class="active">
-                Home
-            </a>
-        </li>
-
-
-        <li>
-            <a href="#about">
-                About
-            </a>
-        </li>
-
-
-        <li>
-            <a href="#services">
-                Services
-            </a>
-        </li>
-
-
-        <li>
-            <a href="#projects">
-                Projects
-            </a>
-        </li>
-
-
-        <li>
-            <a href="#contact">
-                Contact
-            </a>
-        </li>
-
-
-    </ul>
-
-
-
-
-    <!-- CTA -->
-
-    <a href="#contact" class="btn btn-primary">
-
-        Start Project
-
-    </a>
-
-
-
-
-    <!-- Mobile -->
-
-    <button class="menu-toggle" aria-label="Open navigation menu">
-
-
-        <span></span>
-
-        <span></span>
-
-        <span></span>
-
-
-    </button>
-
-
-
-</nav>
-
-
-</header>
-
-
-
-
-<!-- Main Content -->
-
-<main>
-
-
-<!-- =========================
-        HERO EXPERIENCE
-========================= -->
-
-
-<section id="hero">
-
-
-<div class="hero-container container">
-
-
-
-    <!-- LEFT CONTENT -->
-
-
-    <div class="hero-content">
-
-
-
-        <div class="badge hero-badge">
-
-            <span class="status-dot"></span>
-
-            Available For Freelance
-
+    <header id="navbar">
+      <nav class="nav-container" aria-label="Primary navigation">
+        <a href="#hero" class="logo" aria-label="MJL Solutions home">
+          <span class="logo-main">MJL</span>
+          <span class="logo-sub">SOLUTIONS</span>
+        </a>
+
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Case Studies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary nav-cta">Start a Project</a>
+
+        <button
+          class="command-trigger"
+          type="button"
+          aria-label="Open quick links"
+          aria-haspopup="dialog"
+          aria-controls="command-dialog"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+            <path d="m15.5 15.5 4 4m-2-9a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+          </svg>
+          <span class="command-trigger-label">Quick links</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section id="hero">
+        <div class="hero-container container">
+          <div class="hero-content">
+            <p class="eyebrow hero-badge">
+              Independent digital studio by John Benedict Martinez
+            </p>
+
+            <h1 class="hero-title">
+              Clear digital work for
+              <span>[target client type]</span>.
+            </h1>
+
+            <p class="hero-description">
+              MJL Solutions helps [target client type] plan and build focused
+              websites, usable interfaces, and organized digital projects.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View Case Studies</a>
+              <a href="#contact" class="btn btn-secondary">Start a Project</a>
+            </div>
+
+            <p class="hero-note">
+              [Add location, preferred engagement type, or availability when
+              confirmed.]
+            </p>
+          </div>
+
+          <aside class="studio-profile" aria-label="Studio profile">
+            <p class="eyebrow">Studio profile</p>
+            <h2>One independent studio, one direct point of contact.</h2>
+
+            <dl>
+              <div>
+                <dt>Studio</dt>
+                <dd>MJL Solutions</dd>
+              </div>
+              <div>
+                <dt>Led by</dt>
+                <dd>John Benedict Martinez</dd>
+              </div>
+              <div>
+                <dt>Best fit</dt>
+                <dd>[Add target client type]</dd>
+              </div>
+              <div>
+                <dt>Primary focus</dt>
+                <dd>[Confirm priority service offer]</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container section-grid">
+          <header class="section-header">
+            <p class="eyebrow">About the studio</p>
+            <h2>
+              MJL Solutions is an independent digital studio by John Benedict
+              Martinez.
+            </h2>
+          </header>
+
+          <div class="about-content">
+            <p class="about-lead">
+              John works directly with [target client type] who need thoughtful
+              digital work without a complicated process or a large agency team.
+            </p>
+            <p>
+              His work brings together website development, interface design,
+              and project coordination. The goal is to make the scope clear,
+              keep decisions visible, and deliver work in reviewable stages.
+            </p>
+
+            <div class="about-principles">
+              <article>
+                <h3>Direct collaboration</h3>
+                <p>
+                  You work with John from the first conversation through
+                  handoff.
+                </p>
+              </article>
+              <article>
+                <h3>Clear scope</h3>
+                <p>
+                  Deliverables, constraints, and review points are defined
+                  before build work expands.
+                </p>
+              </article>
+              <article>
+                <h3>Practical delivery</h3>
+                <p>
+                  Work is organized into stages that can be reviewed, tested,
+                  and adjusted.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <header class="section-header section-header-row">
+            <div>
+              <p class="eyebrow">Core services</p>
+              <h2>
+                A focused offer, supported by a broader digital skill set.
+              </h2>
+            </div>
+            <p class="section-intro">
+              [Confirm which two or three services should be prioritized and
+              reorder them here.]
+            </p>
+          </header>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <p class="service-number">01</p>
+              <h3>Website Development</h3>
+              <p>
+                Planning and implementation for responsive websites and
+                web-based tools.
+              </p>
+              <p class="service-placeholder">
+                [Add preferred project types and deliverables.]
+              </p>
+            </article>
+
+            <article class="service-card">
+              <p class="service-number">02</p>
+              <h3>UI/UX Design</h3>
+              <p>
+                Structure, user flows, and interface design for clear digital
+                experiences.
+              </p>
+              <p class="service-placeholder">
+                [Add preferred design scope and deliverables.]
+              </p>
+            </article>
+
+            <article class="service-card">
+              <p class="service-number">03</p>
+              <h3>Project Management</h3>
+              <p>
+                Planning, coordination, and progress visibility for digital
+                project delivery.
+              </p>
+              <p class="service-placeholder">
+                [Confirm whether this remains a primary service.]
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="container capabilities-layout">
+          <header class="section-header">
+            <p class="eyebrow">Supporting capabilities</p>
+            <h2>Skills that support the core offer.</h2>
+          </header>
+
+          <ul class="capability-list">
+            <li>Front-end development</li>
+            <li>Django and Python</li>
+            <li>Responsive interface design</li>
+            <li>Virtual assistance</li>
+            <li>Creative content support</li>
+            <li>Social media support</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <header class="section-header section-header-row">
+            <div>
+              <p class="eyebrow">Selected work</p>
+              <h2>Case studies with verified details.</h2>
+            </div>
+            <p class="section-intro">
+              Four current projects are shown. Unknown facts, links, results,
+              and screenshots remain clearly marked as placeholders until they
+              are confirmed.
+            </p>
+          </header>
+
+          <div
+            class="project-filters"
+            role="group"
+            aria-label="Filter case studies by category"
+          >
+            <button
+              class="project-filter is-active"
+              type="button"
+              data-project-filter="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="project-filter"
+              type="button"
+              data-project-filter="web-development"
+              aria-pressed="false"
+            >
+              Web Development
+            </button>
+            <button
+              class="project-filter"
+              type="button"
+              data-project-filter="project-management"
+              aria-pressed="false"
+            >
+              Project Management
+            </button>
+            <button
+              class="project-filter"
+              type="button"
+              data-project-filter="creative-content"
+              aria-pressed="false"
+            >
+              Creative Content
+            </button>
+          </div>
+          <p class="sr-only" id="project-filter-status" aria-live="polite"></p>
+
+          <div class="projects-wrapper">
+            <article
+              class="project-card"
+              data-project-category="web-development project-management"
+            >
+              <div
+                class="case-study-media"
+                role="img"
+                aria-label="Screenshot placeholder for Motorpool Management System"
+              >
+                <span>Screenshot placeholder</span>
+                <small>Add an optimized real project screenshot.</small>
+              </div>
+
+              <div class="project-summary">
+                <div class="project-heading">
+                  <p class="project-number">Case study 01</p>
+                  <span class="project-type">[Add client or project type]</span>
+                </div>
+                <h3>Motorpool Management System</h3>
+                <p>
+                  A management system for organizing vehicle operations,
+                  records, and workflow.
+                </p>
+                <ul class="tags">
+                  <li>Django</li>
+                  <li>Python</li>
+                  <li>MySQL</li>
+                </ul>
+
+                <details class="case-study-details">
+                  <summary>View case study details</summary>
+                  <div class="case-study-body">
+                    <section>
+                      <h4>Problem</h4>
+                      <p>
+                        [Add the verified problem the project needed to solve.]
+                      </p>
+                    </section>
+                    <section>
+                      <h4>My role</h4>
+                      <p>[Add John’s verified responsibilities.]</p>
+                    </section>
+                    <section>
+                      <h4>Solution</h4>
+                      <p>
+                        A system designed to organize vehicle operations,
+                        records, and workflow.
+                      </p>
+                    </section>
+                    <section>
+                      <h4>Key features</h4>
+                      <p>[Add three to five verified features.]</p>
+                    </section>
+                    <section>
+                      <h4>Result</h4>
+                      <p>
+                        [Add a verified result, or omit this field if none is
+                        available.]
+                      </p>
+                    </section>
+                    <div class="case-links">
+                      <span>Live site: [Add URL]</span
+                      ><span>Repository: [Add URL]</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-project-category="web-development"
+            >
+              <div
+                class="case-study-media"
+                role="img"
+                aria-label="Screenshot placeholder for Chess Application"
+              >
+                <span>Screenshot placeholder</span>
+                <small>Add an optimized real project screenshot.</small>
+              </div>
+
+              <div class="project-summary">
+                <div class="project-heading">
+                  <p class="project-number">Case study 02</p>
+                  <span class="project-type">[Add client or project type]</span>
+                </div>
+                <h3>Chess Application</h3>
+                <p>
+                  An interactive chess application focused on game logic and
+                  user interaction.
+                </p>
+                <ul class="tags">
+                  <li>JavaScript</li>
+                  <li>Game Logic</li>
+                  <li>UI</li>
+                </ul>
+
+                <details class="case-study-details">
+                  <summary>View case study details</summary>
+                  <div class="case-study-body">
+                    <section>
+                      <h4>Problem</h4>
+                      <p>[Add the verified problem or learning objective.]</p>
+                    </section>
+                    <section>
+                      <h4>My role</h4>
+                      <p>[Add John’s verified responsibilities.]</p>
+                    </section>
+                    <section>
+                      <h4>Solution</h4>
+                      <p>
+                        An interactive chess experience built around game logic
+                        and user interaction.
+                      </p>
+                    </section>
+                    <section>
+                      <h4>Key features</h4>
+                      <p>[Add three to five verified features.]</p>
+                    </section>
+                    <section>
+                      <h4>Result</h4>
+                      <p>
+                        [Add a verified result, or omit this field if none is
+                        available.]
+                      </p>
+                    </section>
+                    <div class="case-links">
+                      <span>Live site: [Add URL]</span
+                      ><span>Repository: [Add URL]</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-project-category="web-development creative-content"
+            >
+              <div
+                class="case-study-media"
+                role="img"
+                aria-label="Screenshot placeholder for Landing Pages"
+              >
+                <span>Screenshot placeholder</span>
+                <small>Add optimized real page screenshots.</small>
+              </div>
+
+              <div class="project-summary">
+                <div class="project-heading">
+                  <p class="project-number">Case study 03</p>
+                  <span class="project-type">[Add client or project type]</span>
+                </div>
+                <h3>Landing Pages</h3>
+                <p>
+                  Responsive landing-page work focused on structure, visual
+                  hierarchy, and interaction.
+                </p>
+                <ul class="tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+
+                <details class="case-study-details">
+                  <summary>View case study details</summary>
+                  <div class="case-study-body">
+                    <section>
+                      <h4>Problem</h4>
+                      <p>
+                        [Add the verified communication or conversion problem.]
+                      </p>
+                    </section>
+                    <section>
+                      <h4>My role</h4>
+                      <p>[Add John’s verified responsibilities.]</p>
+                    </section>
+                    <section>
+                      <h4>Solution</h4>
+                      <p>
+                        Responsive landing pages with a clear content structure
+                        and focused interface.
+                      </p>
+                    </section>
+                    <section>
+                      <h4>Key features</h4>
+                      <p>[Add three to five verified features.]</p>
+                    </section>
+                    <section>
+                      <h4>Result</h4>
+                      <p>
+                        [Add a verified result, or omit this field if none is
+                        available.]
+                      </p>
+                    </section>
+                    <div class="case-links">
+                      <span>Live site: [Add URL]</span
+                      ><span>Repository: [Add URL]</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-project-category="web-development creative-content"
+            >
+              <div
+                class="case-study-media"
+                role="img"
+                aria-label="Screenshot placeholder for Portfolio Website"
+              >
+                <span>Screenshot placeholder</span>
+                <small>Add an optimized real site screenshot.</small>
+              </div>
+
+              <div class="project-summary">
+                <div class="project-heading">
+                  <p class="project-number">Case study 04</p>
+                  <span class="project-type">Independent studio portfolio</span>
+                </div>
+                <h3>Portfolio Website</h3>
+                <p>
+                  The MJL Solutions portfolio, structured to present services,
+                  selected work, and contact options.
+                </p>
+                <ul class="tags">
+                  <li>JavaScript</li>
+                  <li>GSAP</li>
+                  <li>Vite</li>
+                </ul>
+
+                <details class="case-study-details">
+                  <summary>View case study details</summary>
+                  <div class="case-study-body">
+                    <section>
+                      <h4>Problem</h4>
+                      <p>[Add the verified portfolio goals and constraints.]</p>
+                    </section>
+                    <section>
+                      <h4>My role</h4>
+                      <p>
+                        [Confirm John’s role across strategy, design, and
+                        development.]
+                      </p>
+                    </section>
+                    <section>
+                      <h4>Solution</h4>
+                      <p>
+                        A responsive portfolio for MJL Solutions with accessible
+                        navigation and reusable case-study content.
+                      </p>
+                    </section>
+                    <section>
+                      <h4>Key features</h4>
+                      <p>
+                        Responsive navigation, project filters, reduced-motion
+                        support, and an email fallback.
+                      </p>
+                    </section>
+                    <section>
+                      <h4>Result</h4>
+                      <p>
+                        [Add a verified result, or omit this field if none is
+                        available.]
+                      </p>
+                    </section>
+                    <div class="case-links">
+                      <span
+                        >Live site:
+                        https://nooneops.github.io/MJL-Solutions/</span
+                      ><span>Repository: [Add URL if public]</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="container">
+          <header class="section-header section-header-row">
+            <div>
+              <p class="eyebrow">Working process</p>
+              <h2>A small, visible sequence from brief to handoff.</h2>
+            </div>
+            <p class="section-intro">
+              The exact process can be adjusted to the project scope.
+            </p>
+          </header>
+
+          <ol class="process-timeline">
+            <li class="process-step">
+              <span>01</span>
+              <h3>Align</h3>
+              <p>
+                Confirm the audience, goal, constraints, and available source
+                material.
+              </p>
+            </li>
+            <li class="process-step">
+              <span>02</span>
+              <h3>Scope</h3>
+              <p>Define deliverables, responsibilities, and review points.</p>
+            </li>
+            <li class="process-step">
+              <span>03</span>
+              <h3>Build</h3>
+              <p>Work in small stages that can be reviewed and tested.</p>
+            </li>
+            <li class="process-step">
+              <span>04</span>
+              <h3>Handoff</h3>
+              <p>
+                Document the finished work and transfer agreed files or access.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container contact-grid">
+          <div class="contact-copy">
+            <p class="eyebrow">Start a project</p>
+            <h2>Tell John what you are trying to build or improve.</h2>
+            <p>
+              Share the goal, current situation, preferred timeline, and
+              anything already available. Missing details can be clarified by
+              email.
+            </p>
+            <a class="contact-email" href="mailto:mjohnbenedictx@gmail.com"
+              >mjohnbenedictx@gmail.com</a
+            >
+            <p class="contact-note">
+              No external form service is connected. The form opens your email
+              application.
+            </p>
+          </div>
+
+          <form
+            id="contact-form"
+            class="contact-form"
+            action="mailto:mjohnbenedictx@gmail.com"
+            method="post"
+            enctype="text/plain"
+          >
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            />
+
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button class="btn btn-primary" type="submit">
+              Continue in Email
+            </button>
+            <p
+              id="contact-form-status"
+              class="form-status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+
+      <section id="cta">
+        <div class="container cta-box">
+          <div>
+            <p class="eyebrow">Ready when the brief is clear</p>
+            <h2>Have a project in mind?</h2>
+          </div>
+          <a href="#contact" class="btn btn-primary">Start a Project</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="logo" aria-label="MJL Solutions home">
+            <span class="logo-main">MJL</span>
+            <span class="logo-sub">SOLUTIONS</span>
+          </a>
+          <p>Independent digital studio by John Benedict Martinez.</p>
         </div>
 
+        <div class="footer-column">
+          <h2>Navigate</h2>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Case Studies</a>
+          <a href="#contact">Contact</a>
+        </div>
 
+        <div class="footer-column">
+          <h2>Contact</h2>
+          <a href="mailto:mjohnbenedictx@gmail.com">Email John</a>
+          <a href="https://linkedin.com/in/johnbenedictmartinez">LinkedIn</a>
+          <a href="https://github.com/NoOneops">GitHub</a>
+        </div>
+      </div>
 
+      <div class="container footer-bottom">
+        <p>© 2026 MJL Solutions. Built by John Benedict Martinez.</p>
+      </div>
+    </footer>
 
-        <h1 class="hero-title">
-
-            Turning Ideas
-
-            <span class="text-gradient">
-
-                Into Reality
-
-                </span>
-
-            <br>
-
-                <span id="typing"></span>
-
-        </h1>
-
-
-
-        <p class="hero-description">
-
-
-            MJL Solutions creates powerful digital experiences
-            through web development, automation, UI/UX design,
-            project management, and creative solutions.
-
-
+    <dialog
+      id="command-dialog"
+      class="command-dialog"
+      aria-labelledby="command-title"
+      aria-describedby="command-description"
+    >
+      <div class="command-panel">
+        <div class="command-heading">
+          <div>
+            <p class="eyebrow">Quick navigation</p>
+            <h2 id="command-title">Go to a section</h2>
+          </div>
+          <button
+            class="command-close"
+            type="button"
+            aria-label="Close quick navigation"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+              <path d="m6 6 12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+        <p id="command-description" class="command-description">
+          Search the available destinations, then press Enter to open one.
         </p>
-
-
-
-
-        <div class="hero-actions">
-
-
-            <a href="#contact" class="btn btn-primary">
-
-
-                Start A Project
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-
-            </a>
-
-
-
-            <a href="#projects" class="btn btn-outline">
-
-
-                Explore Work
-
-
-            </a>
-
-
-
-        </div>
-
-
-
-
-        <!-- Stats -->
-
-
-        <div class="hero-stats">
-
-
-            <div>
-
-                <strong>
-                    10+
-                </strong>
-
-                <span>
-                    Projects
-                </span>
-
-            </div>
-
-
-
-            <div>
-
-                <strong>
-                    10+
-                </strong>
-
-                <span>
-                    Services
-                </span>
-
-            </div>
-
-
-
-            <div>
-
-                <strong>
-                    100%
-                </strong>
-
-                <span>
-                    Commitment
-                </span>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-
-
-
-    <!-- RIGHT 3D CORE -->
-
-
-    <div class="hero-visual">
-
-
-
-        <div id="three-container"></div>
-
-
-
-        <div class="floating-panel panel-one">
-
-
-            <span>
-                WEB
-            </span>
-
-            Development
-
-
-        </div>
-
-
-
-        <div class="floating-panel panel-two">
-
-
-            <span>
-                AI
-            </span>
-
-            Solutions
-
-
-        </div>
-
-
-
-        <div class="floating-panel panel-three">
-
-
-            <span>
-                UI
-            </span>
-
-            Design
-
-
-        </div>
-
-
-
-    </div>
-
-
-
-</div>
-
-
-
-
-
-<!-- Scroll Indicator -->
-
-
-<div class="scroll-indicator">
-
-
-    <span></span>
-
-
-</div>
-
-
-
-</section>
-
-
-
-<!-- =========================
-        ABOUT SECTION
-========================= -->
-
-
-<section id="about">
-
-
-<div class="container">
-
-
-
-<div class="section-header">
-
-
-<span class="section-label">
-
-ABOUT MJL
-
-</span>
-
-
-
-<h2 class="section-title">
-
-
-Building technology
-with purpose.
-
-
-</h2>
-
-
-</div>
-
-
-
-
-<div class="about-grid">
-
-
-
-<!-- LEFT -->
-
-
-<div class="about-content card">
-
-
-
-<h3>
-
-Who We Are
-
-</h3>
-
-
-
-<p>
-
-MJL Solutions is a digital solutions brand
-created by John Benedict Martinez.
-We help businesses and individuals save time,
-improve productivity, and build their online presence.
-
-</p>
-
-
-
-<p>
-
-From web development to virtual assistance,
-we combine technology, creativity, and organization
-to create solutions that solve real problems.
-
-</p>
-
-
-
-
-<div class="about-founder">
-
-
-<div class="founder-avatar">
-
-JM
-
-</div>
-
-
-<div>
-
-<strong>
-
-John Benedict Martinez
-
-</strong>
-
-
-<span>
-
-Founder & Developer
-
-</span>
-
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-<!-- RIGHT TIMELINE -->
-
-
-<div class="timeline card">
-
-
-
-<div class="timeline-item">
-
-
-<span>
-
-01
-
-</span>
-
-
-<div>
-
-<h4>
-
-Learning & Discovery
-
-</h4>
-
-
-<p>
-
-Started exploring programming,
-web development, and technology.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-<div class="timeline-item">
-
-
-<span>
-
-02
-
-</span>
-
-
-<div>
-
-<h4>
-
-Building Solutions
-
-</h4>
-
-
-<p>
-
-Created systems, applications,
-and digital experiences.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="timeline-item">
-
-
-<span>
-
-03
-
-</span>
-
-
-<div>
-
-<h4>
-
-MJL Solutions
-
-</h4>
-
-
-<p>
-
-Helping businesses turn ideas
-into digital reality.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-<!-- =========================
-        SERVICES SECTION
-========================= -->
-
-
-<section id="services">
-
-
-<div class="container">
-
-
-
-<div class="section-header">
-
-
-<span class="section-label">
-
-SERVICES
-
-</span>
-
-
-
-<h2 class="section-title">
-
-Digital solutions
-for modern businesses.
-
-</h2>
-
-
-</div>
-
-
-
-
-<div class="services-grid">
-
-
-
-
-
-<!-- SERVICE 01 -->
-
-
-<article class="service-card card">
-
-
-<div class="service-number">
-
-01
-
-</div>
-
-
-
-<div class="icon-box">
-
-<i class="fa-solid fa-code"></i>
-
-</div>
-
-
-
-<h3>
-
-Web Development
-
-</h3>
-
-
-
-<p>
-
-Modern websites and applications
-built with clean code, responsive design,
-and scalable technology.
-
-</p>
-
-
-
-<div class="tags">
-
-<span class="tag">
-
-Django
-
-</span>
-
-
-<span class="tag">
-
-JavaScript
-
-</span>
-
-
-<span class="tag">
-
-HTML/CSS
-
-</span>
-
-
-</div>
-
-
-</article>
-
-
-
-
-
-<!-- SERVICE 02 -->
-
-
-<article class="service-card card">
-
-
-<div class="service-number">
-
-02
-
-</div>
-
-
-
-<div class="icon-box">
-
-<i class="fa-solid fa-headset"></i>
-
-</div>
-
-
-
-<h3>
-
-Virtual Assistant
-
-</h3>
-
-
-
-<p>
-
-Administrative support that helps you
-save time and focus on important tasks.
-
-</p>
-
-
-
-<div class="tags">
-
-<span class="tag">
-
-Email
-
-</span>
-
-
-<span class="tag">
-
-Scheduling
-
-</span>
-
-
-<span class="tag">
-
-Research
-
-</span>
-
-
-</div>
-
-
-</article>
-
-
-
-
-
-<!-- SERVICE 03 -->
-
-
-<article class="service-card card">
-
-
-<div class="service-number">
-
-03
-
-</div>
-
-
-
-<div class="icon-box">
-
-<i class="fa-solid fa-diagram-project"></i>
-
-</div>
-
-
-
-<h3>
-
-Project Management
-
-</h3>
-
-
-
-<p>
-
-Organizing workflows, deadlines,
-and tasks to keep projects efficient.
-
-</p>
-
-
-
-<div class="tags">
-
-<span class="tag">
-
-Planning
-
-</span>
-
-
-<span class="tag">
-
-Tracking
-
-</span>
-
-
-<span class="tag">
-
-Documentation
-
-</span>
-
-
-</div>
-
-
-</article>
-
-
-
-
-
-<!-- SERVICE 04 -->
-
-
-<article class="service-card card">
-
-
-<div class="service-number">
-
-04
-
-</div>
-
-
-
-<div class="icon-box">
-
-<i class="fa-solid fa-pen-ruler"></i>
-
-</div>
-
-
-
-<h3>
-
-UI/UX Design
-
-</h3>
-
-
-
-<p>
-
-Creating intuitive interfaces that combine
-functionality with modern visual design.
-
-</p>
-
-
-
-<div class="tags">
-
-<span class="tag">
-
-Figma
-
-</span>
-
-
-<span class="tag">
-
-Prototyping
-
-</span>
-
-
-</div>
-
-
-</article>
-
-
-
-
-
-
-<!-- SERVICE 05 -->
-
-
-<article class="service-card card">
-
-
-<div class="service-number">
-
-05
-
-</div>
-
-
-
-<div class="icon-box">
-
-<i class="fa-solid fa-palette"></i>
-
-</div>
-
-
-
-<h3>
-
-Creative Content
-
-</h3>
-
-
-
-<p>
-
-Helping brands create engaging digital
-content that connects with audiences.
-
-</p>
-
-
-
-<div class="tags">
-
-<span class="tag">
-
-Graphics
-
-</span>
-
-
-<span class="tag">
-
-Content
-
-</span>
-
-
-</div>
-
-
-</article>
-
-
-
-
-
-
-
-<!-- SERVICE 06 -->
-
-
-<article class="service-card card">
-
-
-<div class="service-number">
-
-06
-
-</div>
-
-
-
-<div class="icon-box">
-
-<i class="fa-solid fa-share-nodes"></i>
-
-</div>
-
-
-
-<h3>
-
-Social Media Management
-
-</h3>
-
-
-
-<p>
-
-Managing online presence through
-content planning and audience engagement.
-
-</p>
-
-
-
-<div class="tags">
-
-<span class="tag">
-
-Strategy
-
-</span>
-
-
-<span class="tag">
-
-Growth
-
-</span>
-
-
-</div>
-
-
-</article>
-
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-<!-- =========================
-        PROJECTS SECTION
-========================= -->
-
-
-<section id="projects">
-
-
-<div class="container">
-
-
-
-<div class="section-header">
-
-
-<span class="section-label">
-
-PROJECTS
-
-</span>
-
-
-
-<h2 class="section-title">
-
-Featured digital
-experiences.
-
-</h2>
-
-
-</div>
-
-
-
-
-
-
-<div class="project-filters" role="group" aria-label="Filter projects by category">
-
-    <button class="project-filter is-active" type="button" data-project-filter="web-development" aria-pressed="true">
-        Web Development
-    </button>
-
-    <button class="project-filter" type="button" data-project-filter="project-management" aria-pressed="false">
-        Project Management
-    </button>
-
-    <button class="project-filter" type="button" data-project-filter="creative-content" aria-pressed="false">
-        Creative Content
-    </button>
-
-</div>
-
-
-<div class="projects-wrapper">
-
-
-
-
-
-<!-- PROJECT 01 -->
-
-
-<article class="project-card card" data-project-category="project-management">
-
-
-
-<div class="project-info">
-
-
-
-<span class="project-number">
-
-01
-
-</span>
-
-
-
-<h3>
-
-Motorpool Management System
-
-</h3>
-
-
-
-<p>
-
-A management system designed to organize
-vehicle operations, records, and workflow
-using modern web technologies.
-
-</p>
-
-
-
-<div class="tags">
-
-
-<span class="tag">
-
-Django
-
-</span>
-
-
-<span class="tag">
-
-Python
-
-</span>
-
-
-<span class="tag">
-
-MySQL
-
-</span>
-
-
-</div>
-
-
-
-<a href="#contact" class="btn btn-outline">
-
-Discuss This Project
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-<div class="project-preview">
-
-
-<div class="mock-screen">
-
-
-<div class="mock-header">
-
-MJL SYSTEM
-
-</div>
-
-
-<div class="mock-content">
-
-
-<div></div>
-
-<div></div>
-
-<div></div>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-</article>
-
-
-
-
-
-
-
-
-<!-- PROJECT 02 -->
-
-
-<article class="project-card card" data-project-category="creative-content">
-
-
-
-<div class="project-info">
-
-
-
-<span class="project-number">
-
-02
-
-</span>
-
-
-
-<h3>
-
-Chess Application
-
-</h3>
-
-
-
-<p>
-
-An interactive chess application focused on
-logic, user interaction, and game experience.
-
-</p>
-
-
-
-<div class="tags">
-
-
-<span class="tag">
-
-JavaScript
-
-</span>
-
-
-<span class="tag">
-
-Game Logic
-
-</span>
-
-
-<span class="tag">
-
-UI
-
-</span>
-
-
-</div>
-
-
-
-<a href="#contact" class="btn btn-outline">
-
-Discuss This Project
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-<div class="project-preview">
-
-
-<div class="chess-board">
-
-
-<div></div>
-
-<div></div>
-
-<div></div>
-
-<div></div>
-
-<div></div>
-
-<div></div>
-
-<div></div>
-
-<div></div>
-
-
-</div>
-
-
-</div>
-
-
-
-</article>
-
-
-
-
-
-
-
-<!-- PROJECT 03 -->
-
-
-<article class="project-card card" data-project-category="creative-content">
-
-
-
-<div class="project-info">
-
-
-<span class="project-number">
-
-03
-
-</span>
-
-
-
-<h3>
-
-Landing Pages
-
-</h3>
-
-
-
-<p>
-
-High-converting landing pages designed
-with modern UI principles.
-
-</p>
-
-
-
-<div class="tags">
-
-
-<span class="tag">
-
-HTML
-
-</span>
-
-
-<span class="tag">
-
-CSS
-
-</span>
-
-
-<span class="tag">
-
-Animations
-
-</span>
-
-
-</div>
-
-
-
-<a href="#contact" class="btn btn-outline">
-
-Discuss This Project
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-<div class="project-preview">
-
-
-<div class="landing-preview">
-
-<h4>
-
-Future Website
-
-</h4>
-
-
-</div>
-
-
-</div>
-
-
-
-</article>
-
-
-
-
-
-
-
-
-<!-- PROJECT 04 -->
-
-
-<article class="project-card card" data-project-category="creative-content">
-
-
-
-<div class="project-info">
-
-
-<span class="project-number">
-
-04
-
-</span>
-
-
-
-<h3>
-
-Portfolio Website
-
-</h3>
-
-
-
-<p>
-
-Modern portfolio experiences focused on
-performance, design, and interaction.
-
-</p>
-
-
-
-<div class="tags">
-
-
-<span class="tag">
-
-JavaScript
-
-</span>
-
-
-<span class="tag">
-
-GSAP
-
-</span>
-
-
-<span class="tag">
-
-UI/UX
-
-</span>
-
-
-</div>
-
-
-
-<a href="#contact" class="btn btn-outline">
-
-Discuss This Project
-
-</a>
-
-
-
-</div>
-
-
-
-<div class="project-preview">
-
-
-<div class="portfolio-preview">
-
-
-MJL
-
-
-</div>
-
-
-</div>
-
-
-
-</article>
-
-
-
-
-
-<!-- PROJECT 05 -->
-<article class="project-card card" data-project-category="web-development">
-    <div class="project-info">
-        <span class="project-number">05</span>
-        <h3>Project Management Workspace</h3>
-        <p>Placeholder for a future project management workspace that brings tasks, timelines, and team updates together.</p>
-        <div class="tags">
-            <span class="tag">Project Management</span>
-            <span class="tag">Planning</span>
-            <span class="tag">Placeholder</span>
-        </div>
-        <a href="#contact" class="btn btn-outline">Discuss This Project</a>
-    </div>
-    <div class="project-preview">
-        <div class="mock-screen">
-            <div class="mock-header">PROJECT HUB</div>
-            <div class="mock-content"><div></div><div></div><div></div></div>
-        </div>
-    </div>
-</article>
-
-<!-- PROJECT 06 -->
-<article class="project-card card" data-project-category="web-development">
-    <div class="project-info">
-        <span class="project-number">06</span>
-        <h3>Project Delivery Dashboard</h3>
-        <p>Placeholder for a future delivery dashboard focused on milestones, priorities, and project progress.</p>
-        <div class="tags">
-            <span class="tag">Project Management</span>
-            <span class="tag">Tracking</span>
-            <span class="tag">Placeholder</span>
-        </div>
-        <a href="#contact" class="btn btn-outline">Discuss This Project</a>
-    </div>
-    <div class="project-preview">
-        <div class="landing-preview"><h4>TASK FLOW</h4></div>
-    </div>
-</article>
-
-<!-- PROJECT 07 -->
-<article class="project-card card" data-project-category="web-development">
-    <div class="project-info">
-        <span class="project-number">07</span>
-        <h3>Operations Roadmap</h3>
-        <p>Placeholder for a future roadmap that organizes workflows, deadlines, and stakeholder visibility.</p>
-        <div class="tags">
-            <span class="tag">Project Management</span>
-            <span class="tag">Workflow</span>
-            <span class="tag">Placeholder</span>
-        </div>
-        <a href="#contact" class="btn btn-outline">Discuss This Project</a>
-    </div>
-    <div class="project-preview">
-        <div class="mock-screen">
-            <div class="mock-header">DELIVERY BOARD</div>
-            <div class="mock-content"><div></div><div></div><div></div></div>
-        </div>
-    </div>
-</article>
-
-<!-- PROJECT 08 -->
-<article class="project-card card" data-project-category="web-development">
-    <div class="project-info">
-        <span class="project-number">08</span>
-        <h3>Creative Content Campaign</h3>
-        <p>Placeholder for a future creative content campaign that turns brand ideas into engaging digital assets.</p>
-        <div class="tags">
-            <span class="tag">Creative Content</span>
-            <span class="tag">Campaign</span>
-            <span class="tag">Placeholder</span>
-        </div>
-        <a href="#contact" class="btn btn-outline">Discuss This Project</a>
-    </div>
-    <div class="project-preview">
-        <div class="landing-preview"><h4>CREATIVE CAMPAIGN</h4></div>
-    </div>
-</article>
-
-<!-- PROJECT 09 -->
-<article class="project-card card" data-project-category="project-management">
-    <div class="project-info">
-        <span class="project-number">09</span>
-        <h3>Social Content System</h3>
-        <p>Placeholder for a future social content system built for consistent publishing and audience engagement.</p>
-        <div class="tags">
-            <span class="tag">Creative Content</span>
-            <span class="tag">Social Media</span>
-            <span class="tag">Placeholder</span>
-        </div>
-        <a href="#contact" class="btn btn-outline">Discuss This Project</a>
-    </div>
-    <div class="project-preview">
-        <div class="portfolio-preview">CONTENT</div>
-    </div>
-</article>
-
-<!-- PROJECT 10 -->
-<article class="project-card card" data-project-category="project-management">
-    <div class="project-info">
-        <span class="project-number">10</span>
-        <h3>Brand Content Toolkit</h3>
-        <p>Placeholder for a future brand toolkit with adaptable visual content for digital channels and campaigns.</p>
-        <div class="tags">
-            <span class="tag">Creative Content</span>
-            <span class="tag">Branding</span>
-            <span class="tag">Placeholder</span>
-        </div>
-        <a href="#contact" class="btn btn-outline">Discuss This Project</a>
-    </div>
-    <div class="project-preview">
-        <div class="mock-screen">
-            <div class="mock-header">SOCIAL STUDIO</div>
-            <div class="mock-content"><div></div><div></div><div></div></div>
-        </div>
-    </div>
-</article>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-<!-- =========================
-        TECH STACK SECTION
-========================= -->
-
-
-<section id="skills">
-
-
-<div class="container">
-
-
-<div class="section-header">
-
-
-<span class="section-label">
-
-TECH STACK
-
-</span>
-
-
-
-<h2 class="section-title">
-
-Tools behind
-the solutions.
-
-</h2>
-
-
-</div>
-
-
-
-
-
-<div class="tech-cloud">
-
-
-
-<div class="tech-item">
-
-<i class="fa-brands fa-python"></i>
-
-Python
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-solid fa-server"></i>
-
-Django
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-brands fa-html5"></i>
-
-HTML
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-brands fa-css3-alt"></i>
-
-CSS
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-brands fa-js"></i>
-
-JavaScript
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-solid fa-database"></i>
-
-MySQL
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-brands fa-git-alt"></i>
-
-Git
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-brands fa-github"></i>
-
-GitHub
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-solid fa-pen-ruler"></i>
-
-Figma
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-solid fa-palette"></i>
-
-Canva
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-solid fa-list-check"></i>
-
-Notion
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-regular fa-calendar-days"></i>
-
-Google Calendar
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-brands fa-trello"></i>
-
-Trello
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-solid fa-seedling"></i>
-
-Sprout Social
-
-</div>
-
-
-
-<div class="tech-item">
-
-<i class="fa-brands fa-slack"></i>
-
-Slack
-
-</div>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<!-- =========================
-        WORKFLOW SECTION
-========================= -->
-
-
-<section id="process">
-
-
-<div class="container">
-
-
-<div class="section-header">
-
-
-<span class="section-label">
-
-PROCESS
-
-</span>
-
-
-
-<h2 class="section-title">
-
-How ideas become
-reality.
-
-</h2>
-
-
-</div>
-
-
-
-
-
-<div class="process-timeline">
-
-
-
-<div class="process-step">
-
-
-<span>
-
-01
-
-</span>
-
-
-<h3>
-
-Discover
-
-</h3>
-
-
-<p>
-
-Understanding goals,
-requirements, and challenges.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="process-step">
-
-
-<span>
-
-02
-
-</span>
-
-
-<h3>
-
-Design
-
-</h3>
-
-
-<p>
-
-Creating user-focused
-digital experiences.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="process-step">
-
-
-<span>
-
-03
-
-</span>
-
-
-<h3>
-
-Develop
-
-</h3>
-
-
-<p>
-
-Building reliable solutions
-with modern technology.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="process-step">
-
-
-<span>
-
-04
-
-</span>
-
-
-<h3>
-
-Test
-
-</h3>
-
-
-<p>
-
-Improving performance,
-quality, and usability.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="process-step">
-
-
-<span>
-
-05
-
-</span>
-
-
-<h3>
-
-Launch
-
-</h3>
-
-
-<p>
-
-Delivering the final product
-ready for users.
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-<!-- =========================
-        CONTACT SECTION
-========================= -->
-
-
-<section id="contact">
-
-
-<div class="container">
-
-
-
-<div class="section-header">
-
-
-<span class="section-label">
-
-CONTACT
-
-</span>
-
-
-
-<h2 class="section-title">
-
-Let's build something
-amazing.
-
-</h2>
-
-
-</div>
-
-
-
-
-
-
-<div class="contact-grid">
-
-
-
-
-
-<!-- CONTACT INFO -->
-
-
-<div class="contact-info card">
-
-
-
-<h3>
-
-Start A Conversation
-
-</h3>
-
-
-
-<p>
-
-Have a project idea?
-Need digital support?
-Let's discuss how MJL Solutions
-can help.
-
-</p>
-
-
-
-
-
-<div class="contact-links">
-
-
-
-<a href="mailto:mjohnbenedictx@gmail.com">
-
-
-<i class="fa-solid fa-envelope"></i>
-
-
-mjohnbenedictx@gmail.com
-
-
-</a>
-
-
-
-
-<a href="https://linkedin.com/in/johnbenedictmartinez">
-
-
-<i class="fa-brands fa-linkedin"></i>
-
-
-LinkedIn
-
-
-</a>
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<!-- TERMINAL FORM -->
-
-
-<div class="terminal contact-terminal">
-
-
-
-<div class="terminal-header">
-
-
-<span class="terminal-dot"></span>
-
-<span class="terminal-dot"></span>
-
-<span class="terminal-dot"></span>
-
-
-
-</div>
-
-
-
-
-<div class="terminal-body">
-
-
-
-<form id="contact-form">
-
-
-
-<label for="contact-name">
-
->
-
-Your Name
-
-</label>
-
-
-
-<input 
-id="contact-name"
-name="name"
-type="text"
-placeholder="John Doe"
-autocomplete="name"
-required
->
-
-
-
-<label for="contact-email">
-
->
-
-Email Address
-
-</label>
-
-
-
-<input 
-id="contact-email"
-name="email"
-type="email"
-placeholder="example@email.com"
-autocomplete="email"
-required
->
-
-
-
-
-<label for="contact-message">
-
->
-
-Message
-
-</label>
-
-
-
-<textarea
-id="contact-message"
-name="message"
-placeholder="Tell us about your idea..."
-required
-></textarea>
-
-
-
-
-<button type="submit" class="btn btn-primary">
-
-Transmit Message
-
-<i class="fa-solid fa-paper-plane"></i>
-
-</button>
-
-<p id="contact-form-status" class="form-status" aria-live="polite"></p>
-
-
-
-</form>
-
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-</section>
-
-
-
-</main>
-
-<!-- =========================
-        FINAL CTA SECTION
-========================= -->
-
-
-<section id="cta">
-
-
-<div class="container">
-
-
-
-<div class="cta-box">
-
-
-
-<div class="cta-content">
-
-
-
-<span class="section-label">
-
-READY
-
-</span>
-
-
-
-
-<h2>
-
-Have an idea?
-
-<span class="text-gradient">
-
-Let's build it.
-
-</span>
-
-
-</h2>
-
-
-
-
-<p>
-
-Whether you need a website,
-automation, design, or digital support,
-MJL Solutions is ready to help.
-
-</p>
-
-
-
-
-<a href="#contact" class="btn btn-primary">
-
-
-Start A Project
-
-
-<i class="fa-solid fa-arrow-right"></i>
-
-
-</a>
-
-
-
-</div>
-
-
-
-
-<div class="cta-orb">
-
-
-<div></div>
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-<!-- =========================
-        FOOTER
-========================= -->
-
-
-<footer id="footer">
-
-
-<div class="container">
-
-
-
-<div class="footer-grid">
-
-
-
-
-
-<!-- BRAND -->
-
-
-<div class="footer-brand">
-
-
-<a href="#hero" class="logo">
-
-
-<span class="logo-main">
-
-MJL
-
-</span>
-
-
-<span class="logo-sub">
-
-SOLUTIONS
-
-</span>
-
-
-</a>
-
-
-
-<p>
-
-Creating digital experiences
-through technology, creativity,
-and innovation.
-
-</p>
-
-
-
-
-
-<div class="status">
-
-
-<span class="status-dot"></span>
-
-
-System Online
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-<!-- NAVIGATION -->
-
-
-<div class="footer-column">
-
-
-<h4>
-
-Navigation
-
-</h4>
-
-
-<a href="#hero">
-
-Home
-
-</a>
-
-
-<a href="#about">
-
-About
-
-</a>
-
-
-<a href="#services">
-
-Services
-
-</a>
-
-
-<a href="#projects">
-
-Projects
-
-</a>
-
-
-<a href="#contact">
-
-Contact
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- SERVICES -->
-
-
-<div class="footer-column">
-
-
-<h4>
-
-Services
-
-</h4>
-
-
-<a href="#services">
-
-Web Development
-
-</a>
-
-
-<a href="#services">
-
-Virtual Assistant
-
-</a>
-
-
-<a href="#services">
-
-UI/UX Design
-
-</a>
-
-
-<a href="#services">
-
-Social Media
-
-</a>
-
-
-<a href="#services">
-
-Project Management
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- SOCIAL -->
-
-
-<div class="footer-column">
-
-
-<h4>
-
-Connect
-
-</h4>
-
-
-
-<a href="mailto:mjohnbenedictx@gmail.com">
-
-Email
-
-</a>
-
-
-
-<a href="https://linkedin.com/in/johnbenedictmartinez">
-
-LinkedIn
-
-</a>
-
-
-
-<a href="https://github.com/NoOneops">
-
-GitHub
-
-</a>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-<div class="footer-bottom">
-
-
-<p>
-
-© 2026 MJL Solutions.
-All rights reserved.
-
-</p>
-
-
-
-<span>
-
-Built with technology & creativity
-
-</span>
-
-
-</div>
-
-
-
-</div>
-
-
-</footer>
-
-<!-- =========================
-     COMMAND PALETTE
-========================= -->
-
-
-<div id="command-overlay">
-
-
-
-<div class="command-box">
-
-
-
-<div class="command-header">
-
-
-<span>
-
-MJL COMMAND SYSTEM
-
-</span>
-
-
-
-<button id="close-command">
-
-ESC
-
-</button>
-
-
-</div>
-
-
-
-
-
-<div class="command-input">
-
-
-<span>
-
->
-
-</span>
-
-
-<input 
-id="command-input"
-placeholder="Type command..."
-autocomplete="off"
-/>
-
-
-</div>
-
-
-
-
-
-<div class="command-results">
-
-
-<p>
-Available commands:
-</p>
-
-
-<div class="command-item">
-
-about
-
-</div>
-
-
-<div class="command-item">
-
-services
-
-</div>
-
-
-<div class="command-item">
-
-projects
-
-</div>
-
-
-<div class="command-item">
-
-contact
-
-</div>
-
-
-<div class="command-item">
-
-github
-
-</div>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-<!-- JavaScript Libraries -->
-
-
-<script src="
-https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js
-"></script>
-
-
-<script src="
-https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js
-"></script>
-
-
-<script src="
-https://cdnjs.cloudflare.com/ajax/libs/three.js/r161/three.min.js
-"></script>
-
-
-
-<!-- Application Scripts -->
-
-<script src="assets/js/loader.js"></script>
-
-<script src="assets/js/navbar.js"></script>
-
-<script src="assets/js/hero.js"></script>
-
-<script src="assets/js/three-scene.js"></script>
-
-<script src="assets/js/animations.js"></script>
-
-<script src="assets/js/cursor.js"></script>
-
-<script src="assets/js/command.js"></script>
-
-<script src="assets/js/scroll.js"></script>
-
-<script src="assets/js/terminal.js"></script>
-
-<script src="assets/js/performance.js"></script>
-
-<script src="assets/js/project-filters.js"></script>
-
-
-</body>
-
+        <label class="sr-only" for="command-input">Search destinations</label>
+        <input
+          id="command-input"
+          type="search"
+          autocomplete="off"
+          placeholder="Search destinations…"
+        />
+        <ul class="command-list">
+          <li>
+            <button type="button" data-command-target="#about">
+              About the studio
+            </button>
+          </li>
+          <li>
+            <button type="button" data-command-target="#services">
+              Services
+            </button>
+          </li>
+          <li>
+            <button type="button" data-command-target="#projects">
+              Case studies
+            </button>
+          </li>
+          <li>
+            <button type="button" data-command-target="#contact">
+              Start a project
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              data-command-target="https://github.com/NoOneops"
+            >
+              GitHub profile
+            </button>
+          </li>
+        </ul>
+        <p class="command-help">
+          <kbd>Esc</kbd> closes · <kbd>Ctrl K</kbd> opens
+        </p>
+      </div>
+    </dialog>
+
+    <script type="module" src="/assets/js/main.js"></script>
+  </body>
 </html>

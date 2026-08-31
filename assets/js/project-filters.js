@@ -1,73 +1,64 @@
-const projectFilters = [...document.querySelectorAll('[data-project-filter]')];
-const projectCards = [...document.querySelectorAll('[data-project-category]')];
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-let activeCategory = projectFilters.find((filter) => filter.classList.contains('is-active'))?.dataset.projectFilter;
+export function initProjectFilters() {
+  const filters = [...document.querySelectorAll("[data-project-filter]")];
+  const cards = [...document.querySelectorAll("[data-project-category]")];
+  const status = document.querySelector("#project-filter-status");
 
-const showCategory = (selectedCategory) => {
-    projectCards.forEach((card) => {
-        card.hidden = card.dataset.projectCategory !== selectedCategory;
+  if (!filters.length || !cards.length) {
+    return;
+  }
+
+  const applyFilter = (selectedFilter) => {
+    const selectedCategory = selectedFilter.dataset.projectFilter;
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const categories = card.dataset.projectCategory
+        .split(/\s+/)
+        .filter(Boolean);
+      const shouldShow =
+        selectedCategory === "all" || categories.includes(selectedCategory);
+      card.hidden = !shouldShow;
+      visibleCount += Number(shouldShow);
     });
-};
 
-const updateActiveFilter = (selectedFilter) => {
-    projectFilters.forEach((filter) => {
-        const isSelected = filter === selectedFilter;
-
-        filter.classList.toggle('is-active', isSelected);
-        filter.setAttribute('aria-pressed', String(isSelected));
+    filters.forEach((filter) => {
+      const isSelected = filter === selectedFilter;
+      filter.classList.toggle("is-active", isSelected);
+      filter.setAttribute("aria-pressed", String(isSelected));
     });
-};
 
-showCategory(activeCategory);
+    if (status) {
+      const label = selectedFilter.textContent.trim();
+      status.textContent = `${visibleCount} ${visibleCount === 1 ? "project" : "projects"} shown for ${label}.`;
+    }
+  };
 
-projectFilters.forEach((filter) => {
-    filter.addEventListener('click', () => {
-        const selectedCategory = filter.dataset.projectFilter;
+  filters.forEach((filter) => {
+    filter.addEventListener("click", () => applyFilter(filter));
+    filter.addEventListener("keydown", (event) => {
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
+        return;
+      }
 
-        if (selectedCategory === activeCategory) {
-            return;
-        }
+      event.preventDefault();
+      const currentIndex = filters.indexOf(filter);
+      const nextIndex =
+        event.key === "Home"
+          ? 0
+          : event.key === "End"
+            ? filters.length - 1
+            : (currentIndex +
+                (event.key === "ArrowRight" ? 1 : -1) +
+                filters.length) %
+              filters.length;
 
-        const outgoingCards = projectCards.filter((card) => !card.hidden);
-        const incomingCards = projectCards.filter((card) => card.dataset.projectCategory === selectedCategory);
-
-        updateActiveFilter(filter);
-        activeCategory = selectedCategory;
-
-        if (reducedMotion || !window.gsap) {
-            showCategory(selectedCategory);
-            return;
-        }
-
-        window.gsap.to(outgoingCards, {
-            opacity: 0,
-            y: -18,
-            duration: 0.2,
-            ease: 'power2.in',
-            onComplete: () => {
-                outgoingCards.forEach((card) => {
-                    card.hidden = true;
-                });
-
-                window.gsap.set(outgoingCards, { clearProps: 'opacity,transform' });
-
-                incomingCards.forEach((card) => {
-                    card.hidden = false;
-                });
-
-                window.gsap.fromTo(
-                    incomingCards,
-                    { opacity: 0, y: 26 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.5,
-                        stagger: 0.08,
-                        ease: 'power3.out',
-                        clearProps: 'opacity,transform'
-                    }
-                );
-            }
-        });
+      filters[nextIndex].focus();
+      applyFilter(filters[nextIndex]);
     });
-});
+  });
+
+  applyFilter(
+    filters.find((filter) => filter.classList.contains("is-active")) ??
+      filters[0],
+  );
+}
